@@ -4,57 +4,47 @@ VMS is organized into functional modules that address specific business needs. E
 
 ## Operational Modules
 
-### 🚗 [Vehicle Management](vehicle-management/index.md)
+### [Vehicle Management](vehicle-management/index.md)
 Core vehicle lifecycle management capabilities
-- **Status**: ✅ Operational
-- **Apps**: 1 (Vehicles)
-- **Coverage**: 80% complete
+- **Apps**: Vehicles
+- **Features**: Master data, custom fields, document management
 
-### 🛡️ [Warranty Management](warranty-management/index.md)
+### [Warranty Management](warranty-management/index.md)
 Complete warranty claim processing and management
-- **Status**: ✅ Operational
-- **Apps**: 6 (Claims, Templates, Versions, etc.)
-- **Coverage**: 90% complete
+- **Apps**: Claims, Templates, Versions, Origin, Parts Return
+- **Features**: Claim processing, version control, template management
 
-### 💰 [Budget Management](budget-management/index.md)
+### [Budget Management](budget-management/index.md)
 Financial allocation and tracking across dealer networks
-- **Status**: ✅ Operational
-- **Apps**: 5 (Budgets, Distribution, Adjustments, etc.)
-- **Coverage**: 100% complete
+- **Apps**: Budgets, Distribution, Adjustments, Calendar, Attributes
+- **Features**: Budget allocation, dealer distribution, adjustment workflows
 
-### 🚨 [Recall Campaigns](recall-campaigns/index.md)
+### [Recall Campaigns](recall-campaigns/index.md)
 Safety recall and service campaign management
-- **Status**: ✅ Operational
-- **Apps**: 1 (Recall Campaigns)
-- **Coverage**: 100% complete
+- **Apps**: Recall Campaigns
+- **Features**: Campaign management, vehicle assignment, progress tracking
 
 ## Partially Implemented Modules
 
-### 🔧 [Service Operations](service-operations/index.md)
+### [Service Operations](service-operations/index.md)
 Service order and workshop management
-- **Status**: ⚠️ Partial
-- **Apps**: Basic service tracking
-- **Coverage**: 40% complete
+- **Current**: Basic service tracking
+- **Planned**: Full service order management, workshop scheduling
 
-### 👥 [Customer Management](customer-management/index.md)
+### [Customer Management](customer-management/index.md)
 Customer and dealer relationship management
-- **Status**: ⚠️ Partial
-- **Apps**: Partner integration only
-- **Coverage**: 20% complete
+- **Current**: Partner integration via middleware
+- **Planned**: Full CRM capabilities, customer portal
 
 ## Planned Modules
 
-### 🛒 [Procurement & Sales](procurement-sales/index.md)
+### [Procurement & Sales](procurement-sales/index.md)
 Purchase orders, sales orders, and invoicing
-- **Status**: 🚧 Planned
-- **Apps**: None yet
-- **Coverage**: 0% complete
+- **Planned Features**: Purchase orders, sales orders, invoicing, quotations
 
-### 📦 [Inventory Operations](inventory-operations/index.md)
+### [Inventory Operations](inventory-operations/index.md)
 Goods movements, stock management, and logistics
-- **Status**: 🚧 Planned
-- **Apps**: None yet
-- **Coverage**: 0% complete
+- **Planned Features**: Goods movements, stock tracking, shipping, delivery
 
 ## Module Integration
 
@@ -80,14 +70,14 @@ graph TB
     PS --> IO
     IO --> VM
     
-    style VM fill:#90EE90
-    style WM fill:#90EE90
-    style BM fill:#90EE90
-    style RC fill:#90EE90
-    style SO fill:#FFD700
-    style CM fill:#FFD700
-    style PS fill:#FFB6C1
-    style IO fill:#FFB6C1
+    style VM fill:#e3f2fd
+    style WM fill:#e3f2fd
+    style BM fill:#e3f2fd
+    style RC fill:#e3f2fd
+    style SO fill:#fff3e0
+    style CM fill:#fff3e0
+    style PS fill:#fce4ec
+    style IO fill:#fce4ec
 ```
 
 ## Quick Navigation
@@ -106,23 +96,23 @@ graph TB
 
 ## Implementation Roadmap
 
-### Current State (40% Complete)
-- ✅ Core vehicle tracking
-- ✅ Warranty claim processing
-- ✅ Budget allocation
-- ✅ Recall management
+### Current State
+- Core vehicle tracking
+- Warranty claim processing
+- Budget allocation
+- Recall management
 
-### Next Phase (Q1 2025)
-- 🚧 Purchase order management
-- 🚧 Sales order processing
-- 🚧 Basic inventory tracking
-- 🚧 Enhanced customer management
+### Next Phase
+- Purchase order management
+- Sales order processing
+- Basic inventory tracking
+- Enhanced customer management
 
-### Future Phases (Q2-Q4 2025)
-- 📋 Full inventory operations
-- 📋 Advanced service management
-- 📋 Complete procurement cycle
-- 📋 Analytics and reporting
+### Future Phases
+- Full inventory operations
+- Advanced service management
+- Complete procurement cycle
+- Analytics and reporting
 
 ## Module Dependencies
 

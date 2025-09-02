@@ -82,10 +82,10 @@ Dynamic field visibility and editability based on:
 
 | Role | Can Create | Can Edit | Can Delete | Can View All |
 |------|-----------|----------|------------|--------------|
-| Admin | ✅ | ✅ | ✅ | ✅ |
-| Manager | ✅ | ✅ | ❌ | ✅ |
-| Sales | ✅ | Limited | ❌ | ✅ |
-| Viewer | ❌ | ❌ | ❌ | ✅ |
+| Admin | Yes | Yes | Yes | Yes |
+| Manager | Yes | Yes | No | Yes |
+| Sales | Yes | Limited | No | Yes |
+| Viewer | No | No | No | Yes |
 
 ## Integration Points
 
