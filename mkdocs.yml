@@ -1,0 +1,167 @@
+site_name: VMS Documentation
+site_description: Vehicle Management System Documentation
+site_url: https://vms-docs.example.com
+repo_url: https://github.com/yourorg/vms
+repo_name: yourorg/vms
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: indigo
+      accent: indigo
+
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        theme: 'base'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: docs/index.md
+  
+  - Getting Started:
+    - Overview: docs/getting-started/index.md
+    - Installation: docs/getting-started/installation.md
+    - Quick Tour: docs/getting-started/quick-tour.md
+  
+  - Platform:
+    - Overview: docs/platform/index.md
+    - Features: docs/platform/features.md
+    - Architecture: docs/platform/architecture.md
+    - Technology Stack: docs/platform/technology.md
+    - Security: docs/platform/security.md
+    - Implementation Status: docs/platform/implementation-status.md
+  
+  - Modules:
+    - Overview: docs/modules/index.md
+    - Vehicle Management:
+      - Overview: docs/modules/vehicle-management/index.md
+      - Features: docs/modules/vehicle-management/features.md
+      - Configuration: docs/modules/vehicle-management/configuration.md
+    - Warranty Management:
+      - Overview: docs/modules/warranty-management/index.md
+      - Claims Processing: docs/modules/warranty-management/claims.md
+      - Templates: docs/modules/warranty-management/templates.md
+    - Budget Management:
+      - Overview: docs/modules/budget-management/index.md
+      - Allocation: docs/modules/budget-management/allocation.md
+      - Distribution: docs/modules/budget-management/distribution.md
+    - Recall Campaigns:
+      - Overview: docs/modules/recall-campaigns/index.md
+      - Campaign Management: docs/modules/recall-campaigns/campaigns.md
+    - Service Operations:
+      - Overview: docs/modules/service-operations/index.md
+      - Service Orders: docs/modules/service-operations/orders.md
+    - Customer Management:
+      - Overview: docs/modules/customer-management/index.md
+    - Procurement & Sales:
+      - Overview: docs/modules/procurement-sales/index.md
+      - Purchase Orders: docs/modules/procurement-sales/purchase-orders.md
+      - Sales Orders: docs/modules/procurement-sales/sales-orders.md
+    - Inventory Operations:
+      - Overview: docs/modules/inventory-operations/index.md
+      - Goods Movements: docs/modules/inventory-operations/goods-movements.md
+  
+  - Configuration:
+    - Overview: docs/configuration/index.md
+    - System Settings: docs/configuration/system.md
+    - Master Data: docs/configuration/master-data.md
+    - Field Controls: docs/configuration/field-controls.md
+    - Validation Rules: docs/configuration/validation.md
+    - Custom Fields: docs/configuration/custom-fields.md
+    - Search Helps: docs/configuration/search-helps.md
+    - Value Lists: docs/configuration/value-lists.md
+    - Text Types: docs/configuration/text-types.md
+  
+  - Integration:
+    - Overview: docs/integration/index.md
+    - SAP S/4HANA: docs/integration/sap-s4hana.md
+    - Third-Party Systems: docs/integration/third-party.md
+    - API Reference: docs/integration/api-reference.md
+    - Data Migration: docs/integration/migration.md
+  
+  - Development:
+    - Overview: docs/development/index.md
+    - Setup: docs/development/setup.md
+    - Implementation Guide: docs/development/implementation-guide.md
+    - Feature Backlog: docs/development/feature-backlog.md
+    - Best Practices: docs/development/best-practices.md
+    - Testing: docs/development/testing.md
+    - Examples: docs/development/examples.md
+  
+  - User Guides:
+    - Overview: docs/user-guide/index.md
+    - Vehicle Manager: docs/user-guide/vehicle-manager.md
+    - Warranty Processor: docs/user-guide/warranty-processor.md
+    - Budget Manager: docs/user-guide/budget-manager.md
+    - System Administrator: docs/user-guide/admin.md
+  
+  - Analytics:
+    - Overview: docs/analytics/index.md
+    - Standard Reports: docs/analytics/standard-reports.md
+    - Custom Reports: docs/analytics/custom-reports.md
+    - Dashboards: docs/analytics/dashboards.md
+    - Data Export: docs/analytics/export.md
+  
+  - Support:
+    - FAQ: docs/support/faq.md
+    - Troubleshooting: docs/support/troubleshooting.md
+    - Glossary: docs/support/glossary.md
+    - Contact: docs/support/contact.md
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourorg
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/yourorg/vms
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/yourorg"  target="_blank" rel="noopener">Your Organization</a>
