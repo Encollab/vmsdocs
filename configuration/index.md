@@ -8,8 +8,8 @@ The Vehicle Configuration System provides a sophisticated, real-time vehicle con
 
 ## Business Value
 
-- **50% Reduction in Configuration Errors** - Real-time constraint validation prevents invalid configurations
-- **70% Faster Quote Generation** - Automated pricing and option resolution
+- **Reduction in Configuration Errors** - Real-time constraint validation prevents invalid configurations
+- **Faster Quote Generation** - Automated pricing and option resolution
 - **Enhanced Customer Experience** - Interactive, visual configuration process
 - **Improved Order Accuracy** - Validated configurations reduce production errors
 - **Flexible Business Rules** - Easily maintainable configuration logic
@@ -22,21 +22,21 @@ graph TB
         UI[Configurator UI - Custom UI5]
         RULES[Rules Management UI - Fiori]
     end
-    
+
     subgraph "Service Layer"
         CONFIG[Configuration Service]
         SESSION[Session Management]
         CONSTRAINT[Constraint Engine]
         PRICING[Pricing Engine]
     end
-    
+
     subgraph "Data Layer"
         TEMPLATES[Configuration Templates]
         OPTIONS[Options & Groups]
         CONSTRAINTS[Constraint Rules]
         VEHICLES[Vehicle Models]
     end
-    
+
     UI --> CONFIG
     RULES --> CONFIG
     CONFIG --> SESSION
@@ -46,7 +46,7 @@ graph TB
     CONSTRAINT --> OPTIONS
     CONSTRAINT --> CONSTRAINTS
     PRICING --> VEHICLES
-    
+
     style UI fill:#e3f2fd
     style CONFIG fill:#fff3e0
     style CONSTRAINT fill:#fce4ec
@@ -55,7 +55,9 @@ graph TB
 ## Core Components
 
 ### 1. Configuration Templates
+
 Templates define the base structure for vehicle configurations, including:
+
 - **Base Model Selection** - Starting point for configuration
 - **Standard Equipment** - Default included options
 - **Available Options** - Selectable features and packages
@@ -63,14 +65,18 @@ Templates define the base structure for vehicle configurations, including:
 - **Constraint Rules** - Business logic for option compatibility
 
 ### 2. Option Groups & Options
+
 Hierarchical organization of configurable elements:
+
 - **Option Groups** - Logical grouping of related options (e.g., "Exterior", "Interior", "Performance")
 - **Options** - Individual selectable features (e.g., "Panoramic Sunroof", "Leather Seats")
 - **Packages** - Bundled options with special pricing
 - **Dependencies** - Parent-child relationships between options
 
 ### 3. Constraint Engine
+
 Real-time validation and resolution system:
+
 - **Requires Rules** - Option A requires Option B
 - **Excludes Rules** - Option A excludes Option B
 - **Implies Rules** - Option A automatically includes Option B
@@ -78,7 +84,9 @@ Real-time validation and resolution system:
 - **Performance Monitoring** - Sub-millisecond constraint resolution
 
 ### 4. Session Management
+
 Stateful configuration tracking:
+
 - **Session Creation** - Initialize configuration state
 - **Change Tracking** - Monitor configuration modifications
 - **Validation State** - Real-time validity status
@@ -90,6 +98,7 @@ Stateful configuration tracking:
 ### Applications
 
 #### Configurator App (`/app/configurator/`)
+
 - **Type**: Custom UI5 Application
 - **Purpose**: Interactive vehicle configuration interface
 - **Features**:
@@ -100,6 +109,7 @@ Stateful configuration tracking:
   - Export/save functionality
 
 #### Configuration Rules App (`/app/configuratorrules/`)
+
 - **Type**: Fiori Elements Application
 - **Purpose**: Manage configuration rules and constraints
 - **Features**:
@@ -112,6 +122,7 @@ Stateful configuration tracking:
 ### Services
 
 #### ConfigurationsService (`/srv/configurator.cds`)
+
 Primary service for configuration operations:
 
 ```javascript
@@ -122,14 +133,14 @@ service ConfigurationsService {
     entity Options
     entity ConfigurationSessions
     entity Constraints
-    
+
     // Actions
     action createSession(templateId: UUID) returns Session
     action addOption(sessionId: UUID, optionId: UUID) returns ValidationResult
     action removeOption(sessionId: UUID, optionId: UUID) returns ValidationResult
     action validateConfiguration(sessionId: UUID) returns ValidationResult
     action calculatePrice(sessionId: UUID) returns PriceCalculation
-    
+
     // Functions
     function getTemplate(templateId: UUID) returns Template
     function getAvailableOptions(sessionId: UUID) returns array of Option
@@ -198,6 +209,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 6. **Resolution Suggestions** - Provide fix recommendations for violations
 
 ### Performance Characteristics
+
 - **Average Resolution Time**: < 10ms for 100+ options
 - **Worst Case Complexity**: O(n²) where n = number of options
 - **Memory Usage**: O(n) for constraint graph
@@ -206,6 +218,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 ## Business Rules Examples
 
 ### Example 1: Luxury Package
+
 ```javascript
 {
     type: "IMPLIES",
@@ -215,19 +228,21 @@ The constraint resolver implements an efficient graph-based algorithm:
 ```
 
 ### Example 2: Engine Compatibility
+
 ```javascript
 {
-    type: "REQUIRES", 
+    type: "REQUIRES",
     source: "SPORT_EXHAUST",
     target: "V8_ENGINE"
 }
 ```
 
 ### Example 3: Exclusive Options
+
 ```javascript
 {
     type: "EXCLUDES",
-    source: "MANUAL_TRANSMISSION", 
+    source: "MANUAL_TRANSMISSION",
     target: "ADAPTIVE_CRUISE_CONTROL"
 }
 ```
@@ -235,16 +250,19 @@ The constraint resolver implements an efficient graph-based algorithm:
 ## Integration Points
 
 ### Vehicle Service Integration
+
 - Retrieve vehicle model specifications
 - Update vehicle configuration data
 - Link configurations to vehicle records
 
 ### Pricing Service Integration
+
 - Real-time price calculation
 - Discount application
 - Tax and fee computation
 
 ### Order Management Integration
+
 - Convert configuration to sales order
 - Validate configuration for production
 - Track configuration through order lifecycle
@@ -252,6 +270,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 ## User Workflows
 
 ### Dealer Configuration Flow
+
 1. Select vehicle model/template
 2. Review standard equipment
 3. Add/remove options with real-time validation
@@ -260,6 +279,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 6. Generate quote or order
 
 ### Customer Self-Service Flow
+
 1. Browse available models
 2. Start configuration wizard
 3. Guided option selection with recommendations
@@ -271,12 +291,14 @@ The constraint resolver implements an efficient graph-based algorithm:
 ## Security & Permissions
 
 ### Role-Based Access
+
 - **Configuration Admin** - Full template and rule management
 - **Sales Manager** - Configuration creation and pricing override
 - **Sales Representative** - Configuration creation within limits
 - **Customer** - Self-service configuration (no pricing override)
 
 ### Data Protection
+
 - Session-based isolation
 - Audit trail for configuration changes
 - Price visibility controls
@@ -285,6 +307,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 ## Monitoring & Analytics
 
 ### Key Metrics
+
 - Configuration completion rate
 - Average configuration time
 - Most/least selected options
@@ -292,6 +315,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 - Price optimization opportunities
 
 ### Performance Monitoring
+
 - Constraint resolution time
 - Session creation/update latency
 - Database query performance
@@ -300,12 +324,14 @@ The constraint resolver implements an efficient graph-based algorithm:
 ## Maintenance & Administration
 
 ### Template Management
+
 - Version control for templates
 - A/B testing different configurations
 - Seasonal option updates
 - Regional variation support
 
 ### Rule Management
+
 - Business-friendly rule editor
 - Rule validation and testing
 - Impact analysis for rule changes
@@ -314,6 +340,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 ## Future Enhancements
 
 ### Planned Features
+
 1. **AI-Powered Recommendations** - ML-based option suggestions
 2. **3D Visualization** - Interactive 3D vehicle preview
 3. **AR Integration** - Augmented reality configuration experience
@@ -322,6 +349,7 @@ The constraint resolver implements an efficient graph-based algorithm:
 6. **Production Feasibility** - Real-time factory constraint checking
 
 ### Technical Improvements
+
 1. **GraphQL API** - Modern API for mobile/web clients
 2. **Redis Caching** - Performance optimization
 3. **Event Streaming** - Real-time configuration updates
@@ -332,18 +360,21 @@ The constraint resolver implements an efficient graph-based algorithm:
 ### Common Issues
 
 #### Configuration Won't Save
+
 - Check session validity
 - Verify constraint violations resolved
 - Confirm user permissions
 - Review audit logs
 
 #### Constraint Resolution Timeout
+
 - Reduce option complexity
 - Check for circular dependencies
 - Review constraint rule efficiency
 - Monitor system resources
 
 #### Price Calculation Errors
+
 - Verify pricing data completeness
 - Check discount rule conflicts
 - Review tax configuration
