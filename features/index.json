@@ -1,0 +1,166 @@
+{
+  "title": "Vehicle Management and Warranty System Features",
+  "description": "Complete feature catalog for VMS platform",
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "vehicle-management",
+      "label": "Vehicle Management",
+      "description": "Comprehensive vehicle lifecycle management capabilities",
+      "icon": "directions-car",
+      "color": "#1976d2",
+      "features": [
+        {
+          "id": "core-records",
+          "title": "Core Vehicle Records",
+          "description": "Comprehensive vehicle data management with standard and custom fields",
+          "path": "/features/vehicle-management/core-records",
+          "tags": ["vehicle-data", "records", "lifecycle", "partners"],
+          "icon": "car"
+        },
+        {
+          "id": "search-lists",
+          "title": "Search and List Management",
+          "description": "Advanced search capabilities and configurable list views for vehicle data",
+          "path": "/features/vehicle-management/search-lists",
+          "tags": ["search", "filtering", "lists", "queries", "bulk-operations"],
+          "icon": "search"
+        },
+        {
+          "id": "field-controls",
+          "title": "Field Control System",
+          "description": "Granular control over field visibility and editability based on status and user context",
+          "path": "/features/vehicle-management/field-controls",
+          "tags": ["field-controls", "permissions", "data-governance", "security"],
+          "icon": "lock"
+        },
+        {
+          "id": "vehicle-configuration",
+          "title": "Vehicle Configuration System",
+          "description": "Template-based vehicle configuration with real-time constraint resolution",
+          "path": "/features/vehicle-management/vehicle-configuration",
+          "tags": ["configuration", "options", "constraints", "templates", "customization"],
+          "icon": "settings"
+        },
+        {
+          "id": "custom-fields",
+          "title": "Custom Fields",
+          "description": "Extend vehicle records with organization-specific data fields",
+          "path": "/features/vehicle-management/custom-fields",
+          "tags": ["custom-fields", "extensibility", "configuration", "flexibility"],
+          "icon": "add-circle"
+        },
+        {
+          "id": "budget-management",
+          "title": "Budget Management",
+          "description": "Multi-dimensional vehicle budget planning with dealer distribution",
+          "path": "/features/vehicle-management/budget-management",
+          "tags": ["budget", "planning", "allocation", "dealers", "forecasting"],
+          "icon": "trending-up"
+        },
+        {
+          "id": "document-management",
+          "title": "Document Management",
+          "description": "Comprehensive attachment system for vehicle-related documents",
+          "path": "/features/vehicle-management/document-management",
+          "tags": ["documents", "attachments", "files", "storage", "compliance"],
+          "icon": "folder"
+        },
+        {
+          "id": "text-management",
+          "title": "Text Management",
+          "description": "Configurable text types for narrative vehicle information",
+          "path": "/features/vehicle-management/text-management",
+          "tags": ["text", "notes", "comments", "documentation", "narrative"],
+          "icon": "text-fields"
+        }
+      ]
+    },
+    {
+      "id": "warranty-management",
+      "label": "Warranty Management",
+      "description": "End-to-end warranty claim processing and campaign management",
+      "icon": "verified-user",
+      "color": "#388e3c",
+      "features": [
+        {
+          "id": "claim-processing",
+          "title": "Claim Processing",
+          "description": "Comprehensive warranty claim management with versioning and audit trails",
+          "path": "/features/warranty-management/claim-processing",
+          "tags": ["claims", "warranty", "processing", "workflow", "approval"],
+          "icon": "assignment"
+        },
+        {
+          "id": "claim-templates",
+          "title": "Claim Templates",
+          "description": "Pre-configured templates for efficient claim creation",
+          "path": "/features/warranty-management/claim-templates",
+          "tags": ["templates", "efficiency", "standardization", "claims"],
+          "icon": "library-books"
+        },
+        {
+          "id": "recall-campaigns",
+          "title": "Recall Campaigns",
+          "description": "Complete campaign orchestration from setup to completion tracking",
+          "path": "/features/warranty-management/recall-campaigns",
+          "tags": ["recalls", "campaigns", "safety", "compliance", "tracking"],
+          "icon": "campaign"
+        },
+        {
+          "id": "master-warranty",
+          "title": "Master Warranty Profiles",
+          "description": "Automated coverage validation based on time and mileage parameters",
+          "path": "/features/warranty-management/master-warranty",
+          "tags": ["warranty", "coverage", "validation", "profiles", "eligibility"],
+          "icon": "verified-user"
+        },
+        {
+          "id": "version-management",
+          "title": "Version Management",
+          "description": "Complete claim version history with comparison capabilities",
+          "path": "/features/warranty-management/version-management",
+          "tags": ["versioning", "audit-trail", "history", "compliance", "tracking"],
+          "icon": "history"
+        }
+      ]
+    },
+    {
+      "id": "platform",
+      "label": "Platform",
+      "description": "Core platform capabilities and technical foundation",
+      "icon": "foundation",
+      "color": "#7b1fa2",
+      "features": [
+        {
+          "id": "architecture",
+          "title": "System Architecture",
+          "description": "Technical foundation and architectural overview",
+          "path": "/features/platform/architecture",
+          "tags": ["architecture", "technical", "integration", "infrastructure"],
+          "icon": "account-tree"
+        },
+        {
+          "id": "integrations",
+          "title": "Integration Capabilities",
+          "description": "ERP, status management, and third-party system integration",
+          "path": "/features/platform/integrations",
+          "tags": ["integration", "ERP", "SAP", "API", "connectivity"],
+          "icon": "sync-alt"
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "totalFeatures": 15,
+    "vehicleFeatures": 8,
+    "warrantyFeatures": 5,
+    "platformFeatures": 2
+  },
+  "metadata": {
+    "lastUpdated": "2024-01-01",
+    "framework": "SAP CAP",
+    "deployment": ["SAP BTP", "AWS", "Azure", "On-Premise"],
+    "integrations": ["SAP", "ERP", "Status Management", "Document Systems"]
+  }
+}

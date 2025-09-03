@@ -1,0 +1,21 @@
+{
+  "label": "Vehicle Management",
+  "description": "Comprehensive vehicle lifecycle management capabilities",
+  "position": 1,
+  "icon": "directions-car",
+  "collapsed": false,
+  "customProps": {
+    "module": "vehicle",
+    "color": "#1976d2",
+    "features": [
+      "core-records",
+      "search-lists",
+      "field-controls",
+      "vehicle-configuration",
+      "custom-fields",
+      "budget-management",
+      "document-management",
+      "text-management"
+    ]
+  }
+}
